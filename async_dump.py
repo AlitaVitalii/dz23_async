@@ -13,7 +13,12 @@ import json
 # from bs4 import BeautifulSoup
 # from itertools import chain
 
-api_key = '0132c883f67b09bd955b2a063dd6f985'
+import environ
+
+
+env = environ.Env
+
+api_key = env('S_KEY')
 city = 'Kyiv'
 url_owt = f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric'
 
